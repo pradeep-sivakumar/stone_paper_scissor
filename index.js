@@ -1,10 +1,7 @@
-
-
-
 let bot;
 let player;
 let result;
-
+let score = 0;
 
 function game(btn)
 {
@@ -14,11 +11,18 @@ function game(btn)
     document.getElementById("computerText").textContent = `Bot Selection : ${bot}`;
     document.getElementById("playerText").textContent = `Player Selection : ${btn}`;
     document.getElementById("resultText").textContent = checkWinner();
-}   
-   
   
+  if(checkWinner()==="Result : You Won!!!"){
+    score++;
+    
+  }
+  else if(checkWinner()==="Result : You Lose!!!"){
+    score--;
+    
+  }
+  document.getElementById("score").textContent = score;
 
-
+}
 
 function computerTurn(){
     
@@ -46,3 +50,5 @@ function checkWinner(){
     }
     
 }
+
+
